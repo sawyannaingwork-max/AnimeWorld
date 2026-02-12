@@ -1,3 +1,4 @@
+import Favorite from "./Favorite";
 import Popular from "./Popular";
 
 export default function Home()
@@ -9,6 +10,7 @@ export default function Home()
                 <p className="w-[90%] mx-auto text-xl">From timeless classics to the latest releases, dive deep into worlds that inspire, move, and excite.</p>
             </div>
             <Popular />
+            <Favorite />
         </>
     )
 }

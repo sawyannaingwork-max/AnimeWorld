@@ -23,3 +23,9 @@ use swiper and fetch by using useQuery.
 
 1. Create a component that takes children as props and it is a swiper.
 2. Fetch data and create anime component and use it as a child of swiper component from 1.
+
+fetch url - https://api.jikan.moe/v4/top/anime?filter=bypopularity
+
+### Favorite Section 
+Same as Popular Section only api endpoint differ
+fetch url - https://api.jikan.moe/v4/top/anime?filter=favorite

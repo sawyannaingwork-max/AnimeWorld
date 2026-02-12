@@ -1,25 +1,26 @@
-import SwiperProvider from "../components/SwiperProvider";
+import AnimeSkeleton from "../components/AnimeSkeleton";
 import useJikan from "../components/useJikan";
 import type { animeListResponseType } from "../type";
+import SwiperProvider from "../components/SwiperProvider";
 import Anime from "../components/Anime";
 import { SwiperSlide } from "swiper/react";
-import AnimeSkeleton from "../components/AnimeSkeleton";
 
-export default function Popular()
+export default function Favorite()
 {
-    const { data, isFetching, isError } = useJikan<animeListResponseType>(["Popular Anime List"], "https://api.jikan.moe/v4/top/anime?filter=bypopularity")
+    // Fetching Data
+    const { data, isFetching, isError } = useJikan<animeListResponseType>(["Favorite Anime"], "https://api.jikan.moe/v4/top/anime?filter=favorite")
 
     if (isFetching)
     {
-        return <AnimeSkeleton text="Popular" />
+        return <AnimeSkeleton text="Favorite" />
     }
 
     if (isError || !data)
     {
-        return <p>Error</p>
+        return <p>Something went wrong. Try again later.</p>
     }
 
-    const animes = data.data
+    const animes = data.data 
 
     return(
         <div className="mt-9">

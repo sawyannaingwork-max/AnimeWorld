@@ -1,10 +1,10 @@
 import arrow from "./../assets/arrow.svg"
 
-export default function AnimeSkeleton()
+export default function AnimeSkeleton({text} : {text : string})
 {
     return(
         <div className="mt-9">
-            <h1 className="font-alice text-2xl text-center mb-5">Popular</h1>
+            <h1 className="font-alice text-2xl text-center mb-5">{text}</h1>
             <div className="flex justify-between items-center w-[90%] mx-auto">
       
             <img
