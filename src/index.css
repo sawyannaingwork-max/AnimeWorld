@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Alice&family=Itim&display=swap');
+
+@import "tailwindcss";
+
+@theme 
+{
+    --font-albert : "Albert Sans", sans-serif;
+    --font-itim : "Itim", cursive;
+    --font-alice : "Alice", serif;
+
+    --color-background : #F7F9FC;
+    --color-text : #1F2937;
+    --color-primary : #3B82F6;
+    --color-secondary : #F472B6;
+    --color-textShallow : #6B7280;
+    --color-box : #8B5CF6;
+
+    --breakpoint-xs : 360px;
+    --breakpoint-sm : 460px;
+    --breakpoint-md : 700px;
+    --breakpoint-lg : 1024px;
+    --breakpoint-xl : 1280px;
+}
