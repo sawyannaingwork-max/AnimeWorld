@@ -37,3 +37,24 @@ fetch url - https://api.jikan.moe/v4/top/anime?filter=airing
 ### Upcoming Section
 Same as Popular with api endpoint difference
 fetch url - https://api.jikan.moe/v4/top/anime?filter=upcoming
+
+### Result Section 
+Here is the interesting features. 
+This section will show the result of user search.So I need to use refetch and enabled : false.
+
+Since search bar is in header and result page is in home 2 different components. I will define all the nessary state and fetching in their parent which is App and passed down as props. 
+
+### State defination for Search Bar (Header Component)
+search for controlled form 
+
+### State defination for resulted Page
+page for navigation of the resulted animes.
+
+### Header Props
+search, setSearch, refetch 
+
+### Resulted Page Props
+page, setPage, data, isFetching, isError
+
+### Api for searching Anime
+https://api.jikan.moe/v4/anime?q="search"
