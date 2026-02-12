@@ -29,3 +29,11 @@ fetch url - https://api.jikan.moe/v4/top/anime?filter=bypopularity
 ### Favorite Section 
 Same as Popular Section only api endpoint differ
 fetch url - https://api.jikan.moe/v4/top/anime?filter=favorite
+
+### Airing SEction
+Same as Popular with api endpoint difference
+fetch url - https://api.jikan.moe/v4/top/anime?filter=airing
+
+### Upcoming Section
+Same as Popular with api endpoint difference
+fetch url - https://api.jikan.moe/v4/top/anime?filter=upcoming

@@ -1,30 +1,29 @@
-import AnimeSkeleton from "../components/AnimeSkeleton";
+import SwiperProvider from "../components/SwiperProvider";
 import useJikan from "../components/useJikan";
 import type { animeListResponseType } from "../type";
-import SwiperProvider from "../components/SwiperProvider";
 import Anime from "../components/Anime";
 import { SwiperSlide } from "swiper/react";
+import AnimeSkeleton from "../components/AnimeSkeleton";
 
-export default function Favorite()
+export default function Upcoming()
 {
-    // Fetching Data
-    const { data, isFetching, isError } = useJikan<animeListResponseType>(["Favorite Anime"], "https://api.jikan.moe/v4/top/anime?filter=favorite")
+    const { data, isFetching, isError } = useJikan<animeListResponseType>(["Upcoming Anime List"], "https://api.jikan.moe/v4/top/anime?filter=upcoming")
 
     if (isFetching)
     {
-        return <AnimeSkeleton text="Favorite" />
+        return <AnimeSkeleton text="Upcoming" />
     }
 
     if (isError || !data)
     {
-        return <p>Something went wrong. Try again later.</p>
+        return <p>Error</p>
     }
 
-    const animes = data.data 
+    const animes = data.data
 
     return(
         <div className="mt-9">
-            <h1 className="text-center font-alice mb-5 text-2xl">Favorite</h1>
+            <h1 className="text-center font-alice mb-5 text-2xl">Upcoming</h1>
             <SwiperProvider>
             {
                 animes.map(anime => {

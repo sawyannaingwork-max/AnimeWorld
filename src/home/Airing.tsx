@@ -5,14 +5,14 @@ import SwiperProvider from "../components/SwiperProvider";
 import Anime from "../components/Anime";
 import { SwiperSlide } from "swiper/react";
 
-export default function Favorite()
+export default function Airing()
 {
     // Fetching Data
-    const { data, isFetching, isError } = useJikan<animeListResponseType>(["Favorite Anime"], "https://api.jikan.moe/v4/top/anime?filter=favorite")
+    const { data, isFetching, isError } = useJikan<animeListResponseType>(["Airing Anime"], "https://api.jikan.moe/v4/top/anime?filter=airing")
 
     if (isFetching)
     {
-        return <AnimeSkeleton text="Favorite" />
+        return <AnimeSkeleton text="Airing" />
     }
 
     if (isError || !data)
@@ -24,7 +24,7 @@ export default function Favorite()
 
     return(
         <div className="mt-9">
-            <h1 className="text-center font-alice mb-5 text-2xl">Favorite</h1>
+            <h1 className="text-center font-alice mb-5 text-2xl">Airing</h1>
             <SwiperProvider>
             {
                 animes.map(anime => {

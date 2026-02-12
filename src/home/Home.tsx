@@ -1,5 +1,7 @@
+import Airing from "./Airing";
 import Favorite from "./Favorite";
 import Popular from "./Popular";
+import Upcoming from "./Upcoming";
 
 export default function Home()
 {
@@ -11,6 +13,8 @@ export default function Home()
             </div>
             <Popular />
             <Favorite />
+            <Airing />
+            <Upcoming />
         </>
     )
 }
