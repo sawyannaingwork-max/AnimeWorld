@@ -21,3 +21,19 @@
     --breakpoint-lg : 1024px;
     --breakpoint-xl : 1280px;
 }
+
+.primary-btn 
+{
+    background-image: linear-gradient(to left,#77A1D3, #79CBCA, #E684AE);
+    @apply px-2 py-1 font-itim rounded-sm cursor-pointer transition-all duration-300;
+}
+
+.primary-btn:hover 
+{
+    background-image: linear-gradient(to right,#77A1D3, #79CBCA, #E684AE);
+}
+
+.link 
+{
+    @apply text-box font-alice hover:text-secondary duration-150;
+}
