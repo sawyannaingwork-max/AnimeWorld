@@ -19,7 +19,7 @@ export default function Header({search, setSearch, setApplySearch, setPage} : He
         setPage(1)
     }
     return(
-        <header className="h-15 relative bg-background justify-between flex items-center px-5">
+        <header className="h-15 sticky z-10 top-0 bg-background justify-between flex items-center px-5">
             <div className="flex items-center gap-1">
                 <img onClick={() => setIsOpen(!isOpen)} className="lg:hidden cursor-pointer" src={menu} alt="Menu Icon" />
                 <h1 className="text-3xl font-alice text-text">Anime World</h1>
