@@ -6,7 +6,7 @@ import Result from "./Result";
 import Upcoming from "./Upcoming";
 
 import { useState } from "react";
-import { keepPreviousData, useQuery } from "@tanstack/react-query";
+import {useQuery } from "@tanstack/react-query";
 
 export default function Home()
 {
