@@ -54,7 +54,7 @@ export default function Result({isFetching, isError, data, page, setPage} : Resu
                     }} className="secondary-btn w-20">Next</button>
                 }
             </div>
-            <div className="flex justify-between flex-wrap gap-5">
+            <div className="flex flex-wrap gap-5">
                 {
                     animes.map(anime => {
                         return(
@@ -67,8 +67,6 @@ export default function Result({isFetching, isError, data, page, setPage} : Resu
                     })
                 }
             </div>
-
-            
         </div>
     )
 }

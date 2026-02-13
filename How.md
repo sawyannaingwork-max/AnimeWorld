@@ -61,3 +61,17 @@ https://api.jikan.moe/v4/anime?q="search"
 
 ### Result Section
 show a list of animes and if there is next show next button if prev show prev button that's all.
+
+So The structure I explain above work well but only with one catch :(
+
+### The Problem 
+I want to fetch when user search and when user navigate between page.Not fetch automatically. So I set enabled false and use refetch when user search. The problem is since I set enalbed false, it is not refetching when user navigate between page(pervios and next button).
+
+### How I solve it.
+First I try enabled : !!search - (meaning it will only fetch when search is a truty value IDK why they use !! instead of Boolean()).
+The problem with this approach is when user type in search bar it start fetching before user click search on every key press(It sucks).
+So That doesn't work.
+
+So I made second approach. In this approach I define another state for appliedSearch which will be intailly "".
+And use enabled : !!appliedSearch. and update appliedSearch to search when user click search.
+Yearh thats it. You could be thinking why I don't do the same with search. The answer is search is used to control the form so.
