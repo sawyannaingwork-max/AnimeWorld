@@ -3,6 +3,15 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
 
+// @ts-expect-error Swiper CSS modules don't declare side effects in type definitions
+import 'swiper/css';
+// @ts-expect-error Swiper CSS modules don't declare side effects in type definitions
+import 'swiper/css/pagination';
+// @ts-expect-error Swiper CSS modules don't declare side effects in type definitions
+import 'swiper/css/navigation';
+
+
+
 // Importing browser route
 import { BrowserRouter } from 'react-router'
 
