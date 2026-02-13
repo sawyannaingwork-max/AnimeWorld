@@ -3,7 +3,7 @@ export default function ResultLoader()
     return(
         <div className="mt-9 animate-pulse w-[90%] mx-auto">
             <h1 className="text-center text-2xl font-alice pb-5 text-text">Result</h1>
-            <div className="flex gap-5 overflow-hidden">
+            <div className="flex flex-wrap gap-5">
             {
                 Array.from({length : 5}).map((_, index) => {
                     return(
