@@ -58,3 +58,6 @@ page, setPage, data, isFetching, isError
 
 ### Api for searching Anime
 https://api.jikan.moe/v4/anime?q="search"
+
+### Result Section
+show a list of animes and if there is next show next button if prev show prev button that's all.

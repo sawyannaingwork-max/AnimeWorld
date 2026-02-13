@@ -1,9 +1,20 @@
+import type { animeListResponseType } from "../type";
 import Airing from "./Airing";
 import Favorite from "./Favorite";
 import Popular from "./Popular";
+import Result from "./Result";
 import Upcoming from "./Upcoming";
 
-export default function Home()
+// Type for home props
+interface HomeProps {
+    isFetching : boolean,
+    isError : boolean,
+    page : number,
+    data : animeListResponseType | undefined,
+    setPage : React.Dispatch<React.SetStateAction<number>>,
+
+}
+export default function Home({isFetching, isError, data, page, setPage} : HomeProps)
 {
     return(
         <>
@@ -12,6 +23,13 @@ export default function Home()
                 <p className="w-[90%] mx-auto text-xl">From timeless classics to the latest releases, dive deep into worlds that inspire, move, and excite.</p>
             </div>
             <div id="anime-list" className="pt-9">
+                <Result 
+                    isFetching = {isFetching}
+                    isError = {isError}
+                    data = {data}
+                    page = {page}
+                    setPage = {setPage}
+                />
                 <Popular />
                 <Favorite />
                 <Airing />

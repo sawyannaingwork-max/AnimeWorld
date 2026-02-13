@@ -5,16 +5,18 @@ import menu from "./../assets/menu-light.svg"
 interface HeaderProps {
     search : string,
     setSearch : React.Dispatch<React.SetStateAction<string>>,
-    refetch : () => void
+    setApplySearch : React.Dispatch<React.SetStateAction<string>>,
+    setPage : React.Dispatch<React.SetStateAction<number>>
 }
-export default function Header({search, setSearch, refetch} : HeaderProps)
+export default function Header({search, setSearch, setApplySearch, setPage} : HeaderProps)
 {
     const [isOpen, setIsOpen] = useState<boolean>(false)
 
     function handleSubmit(e : React.SubmitEvent<HTMLFormElement>)
     {
         e.preventDefault()
-        refetch()
+        setApplySearch(search)
+        setPage(1)
     }
     return(
         <header className="h-20 relative bg-background justify-between flex items-center px-5">

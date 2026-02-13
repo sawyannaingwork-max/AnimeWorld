@@ -3,7 +3,7 @@ import useJikan from "../components/useJikan";
 import type { animeListResponseType } from "../type";
 import Anime from "../components/Anime";
 import { SwiperSlide } from "swiper/react";
-import AnimeSkeleton from "../components/AnimeSkeleton";
+import AnimeSkeleton from "../loader/AnimeSkeleton";
 
 export default function Upcoming()
 {
