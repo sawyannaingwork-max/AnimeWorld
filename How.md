@@ -114,4 +114,20 @@ R - 17+ (violence & profanity)
 R+ - Mild Nudity
 Rx - Hentai
 
-So for raring i will use array of object
+So for rating i will use array of object
+
+### The Problem
+OK I have a problem now. I add search bar to the header and the header is always visible on the page. The Problem is when user input and search there the result will show in the home page. But the search bar is everywhere as I use header as common component.
+
+### The Problem fix
+
+#### Approach One
+I can remove search bar from header and add it to the home page.
+
+#### Approact Two
+I can create another Header and use that Header for other page.
+
+#### Trade Off
+Approach one will be much more effiency but style wise a little worse.
+Approach two is not effiency because I have to add Header 2 to every page.
+So Yes Approach One :(
