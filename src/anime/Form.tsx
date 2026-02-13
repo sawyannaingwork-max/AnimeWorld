@@ -55,7 +55,7 @@ export default function Form({input, setInput, setPage} : FormProps)
             <div className="form-wrapper">
                 <label htmlFor="type">Type</label>
                 <select name="type" id="type" value={input.type} onChange={(e) => handleChange(e)}>
-                    <option value="" disabled>Chhose Type</option>
+                    <option value="">All</option>
                     {
                         types.map((type, index) => {
                             return(
@@ -68,7 +68,7 @@ export default function Form({input, setInput, setPage} : FormProps)
             <div className="form-wrapper">
                 <label htmlFor="filter">Filter</label>
                 <select name="filter" id="filter" value={input.filter} onChange={(e) => handleChange(e)}>
-                    <option value="" disabled>Choose Filter</option>
+                    <option value="">All</option>
                     {
                         filter.map((f, index) => {
                             return(
@@ -81,7 +81,7 @@ export default function Form({input, setInput, setPage} : FormProps)
             <div className="form-wrapper">
                 <label htmlFor="rating">Rating</label>
                 <select name="rating" id="rating" value={input.rating} onChange={(e) => handleChange(e)}>
-                    <option value="" disabled>Choose Rating</option>
+                    <option value="">All</option>
                     {
                         rating.map((r, index) => {
                             return(
