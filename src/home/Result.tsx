@@ -40,7 +40,7 @@ export default function Result({isFetching, isError, data, page, setPage} : Resu
     return (
         <div className="w-[90%] mx-auto pt-9">
             <h1 className="font-alice text-center text-2xl pb-5 text-text">Result</h1>
-            <div className="mx-5 mb-4 flex justify-between flex-wrap mt-5">
+            <div className="mx-5 mb-4 flex justify-center gap-5 flex-wrap mt-5">
                 {
                     data.pagination.current_page  && data.pagination.current_page > 1 &&
                     <button onClick={() => {
