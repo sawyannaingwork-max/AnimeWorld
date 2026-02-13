@@ -298,3 +298,10 @@ export interface animeListResponseType {
     pagination : metaType,
     data : AnimeType[]
 }
+
+// Type for filter Input
+export interface InputType {
+    type : "" | "tv" | "movie" | "ova" | "special" | "ona" | "music" | "cm" | "pv" | "tv_special",
+    filter : "" | "airing" | "upcoming" | "bypopularity" | "favorite",
+    rating : "" | "g" | "pg" | "pg13" | "r17" | "r" | "rx"
+}

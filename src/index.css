@@ -65,3 +65,23 @@
 {
     background: radial-gradient(circle, rgba(59, 130, 246, 1) 0%, rgba(255, 255, 255, 1) 100%);
 }
+
+.form-wrapper 
+{
+    @apply flex flex-col gap-1 my-3
+}
+
+.form-wrapper label 
+{
+    @apply font-itim
+}
+
+.form-wrapper select 
+{
+    @apply border px-2 py-1 rounded-md cursor-pointer
+}
+
+.tag 
+{
+    @apply bg-box font-itim px-2 py-1 text-center text-background rounded-md;
+}

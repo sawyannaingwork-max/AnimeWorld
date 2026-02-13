@@ -75,3 +75,43 @@ So That doesn't work.
 So I made second approach. In this approach I define another state for appliedSearch which will be intailly "".
 And use enabled : !!appliedSearch. and update appliedSearch to search when user click search.
 Yearh thats it. You could be thinking why I don't do the same with search. The answer is search is used to control the form so.
+
+### Anime Page
+This Page show a list of animes.
+User can filter it according to type, filter and rating.
+This is very simple process. All I need is to define state to control form and according to user input i will change querykey and url of useQuery.
+
+type allowed values 
+"tv"
+"movie"
+"ova"
+"special"
+"ona"
+"music"
+"cm"
+"pv"
+"tv_special"
+
+filter allowed values 
+"airing"
+"upcoming"
+"bypopularity"
+"favorite"
+
+rating allowed values 
+"g" 
+"pg"
+"pg13"
+"r17"
+"r"
+"rx"
+
+rating meanings
+G - All Ages
+PG - Children
+PG-13 - Teens 13 or older
+R - 17+ (violence & profanity)
+R+ - Mild Nudity
+Rx - Hentai
+
+So for raring i will use array of object

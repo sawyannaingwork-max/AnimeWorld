@@ -4,6 +4,7 @@ import Home from "./home/Home"
 import { useState } from "react"
 import { keepPreviousData, useQuery } from "@tanstack/react-query"
 import type { animeListResponseType } from "./type"
+import AnimePage from "./anime/AnimePage"
 
 export default function App()
 {
@@ -59,6 +60,7 @@ export default function App()
                         />
                     } 
                 />
+                <Route path="/anime" element={<AnimePage />} />
             </Routes>
         </div>
     )
