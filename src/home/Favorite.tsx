@@ -27,9 +27,9 @@ export default function Favorite()
             <h1 className="text-center font-alice mb-5 text-2xl">Favorite</h1>
             <SwiperProvider>
             {
-                animes.map(anime => {
+                animes.map((anime, index) => {
                     return (
-                        <SwiperSlide key={anime.mal_id}>
+                        <SwiperSlide key={index}>
                             <Anime 
                                 id = {anime.mal_id}
                                 image = {anime.images?.jpg?.image_url}

@@ -56,9 +56,9 @@ export default function Result({isFetching, isError, data, page, setPage} : Resu
             </div>
             <div className="flex flex-wrap gap-5">
                 {
-                    animes.map(anime => {
+                    animes.map((anime, index) => {
                         return(
-                            <Anime key={anime.mal_id}
+                            <Anime key={index}
                                 image = {anime.images?.jpg?.image_url}
                                 title = {anime.title_english}
                                 id = {anime.mal_id}
