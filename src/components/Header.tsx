@@ -1,3 +1,4 @@
+import { NavLink } from "react-router"
 export default function Header()
 {
     return(
@@ -7,10 +8,10 @@ export default function Header()
             <nav>
                 <ul className="flex gap-5">
                     <li>
-                        <a className="link" href="#">Home</a>
+                        <NavLink className="link" to="/">Home</NavLink>
                     </li>
                     <li>
-                        <a className="link" href="#">Anime</a>
+                        <NavLink className="link" to="/anime">Anime</NavLink>
                     </li>
                 </ul>
             </nav>

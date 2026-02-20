@@ -1,17 +1,20 @@
 import { useState } from "react";
 import type { AnimeType } from "../type";
+import { useNavigate } from "react-router";
 
 export default function AnimeCard(props : AnimeType)
 {
     // Defining state for playing
     const [isPlaying, setIsPlaying] = useState<boolean>(false)
 
+    const navigate = useNavigate()
+
     return(
         <div>
             {
                 !isPlaying && props.images?.jpg?.image_url && 
                 <div className="relative h-88.25">
-                    <img className="w-full h-full object-cover rounded-md hover:shadow-md cursor-pointer shadow-black duration-300" src={props.images.jpg.image_url} alt={props.title_english? props.title_english : "Unknown"}/>
+                    <img onClick={() => navigate(`/anime/${props.mal_id}`)} className="w-full h-full object-cover rounded-md hover:shadow-md cursor-pointer shadow-black duration-300" src={props.images.jpg.image_url} alt={props.title_english? props.title_english : "Unknown"}/>
                 </div>
             } 
 
