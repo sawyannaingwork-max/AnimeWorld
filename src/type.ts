@@ -108,8 +108,8 @@ export interface AnimeRecommandationType {
 // Type for Anime Character
 export interface AnimeCharacterType {
     character : {
-        mal_id : number | null,
-        images: {
+        mal_id? : number | null,
+        images?: {
             jpg ?: {
                 image_url ?: string | null
             }
@@ -315,4 +315,9 @@ export interface AnimeDetailResponse {
 // Type for anime images response
 export interface AnimeImageResponse {
     data : AnimeImageType[]
+}
+
+// Type for anime character response
+export interface AnimeCharacterResponse {
+    data : AnimeCharacterType[]
 }

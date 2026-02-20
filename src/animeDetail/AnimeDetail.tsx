@@ -1,6 +1,7 @@
 import { useParams } from "react-router"
 import Info from "./Info"
 import Images from "./Images"
+import Characters from "./Characters"
 
 export default function AnimeDetail()
 {
@@ -16,6 +17,7 @@ export default function AnimeDetail()
         <div className="bg-linear-to-b from-background to-[#79CBCA]">
             <Info id={id} />
             <Images id={id} />
+            <Characters id={id} />
         </div>
     )
 }
