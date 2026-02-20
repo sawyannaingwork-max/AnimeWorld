@@ -34,7 +34,7 @@ export default function Images({id} : {id : string})
                     {
                         return(
                             <SwiperSlide key={index}>
-                                <img className="w-56.25 h-75 mx-auto object-contain rounded-md" src={img.jpg.image_url} alt="Images" />
+                                <img className="w-56.25 h-75 mx-auto object-cover rounded-md" src={img.jpg.image_url} alt="Images" />
                             </SwiperSlide>
                         )
                     }

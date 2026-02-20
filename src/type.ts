@@ -99,7 +99,9 @@ export interface AnimeRecommandationType {
     entry : {
         mal_id : number | null,
         images : {
-            image_url ?: string | null
+            jpg ?: {
+                image_url ?: string | null
+            }
         },
         title? : string | null
     }
@@ -339,4 +341,9 @@ export interface AnimeEpisodeResponse {
         has_next_page ?: boolean | null
     },
     data : AnimeEpisodeType[]
+}
+
+// Type for anime recommand response
+export interface AnimeRecommandationResponse {
+    data : AnimeRecommandationType[]
 }

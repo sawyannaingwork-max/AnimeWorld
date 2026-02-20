@@ -3,6 +3,7 @@ import Info from "./Info"
 import Images from "./Images"
 import Characters from "./Characters"
 import Episodes from "./Episodes"
+import Recommand from "./Recommand"
 
 export default function AnimeDetail()
 {
@@ -20,6 +21,7 @@ export default function AnimeDetail()
             <Images id={id} />
             <Characters id={id} />
             <Episodes id={id} />
+            <Recommand id={id} />
         </div>
     )
 }
