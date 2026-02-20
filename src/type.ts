@@ -347,3 +347,8 @@ export interface AnimeEpisodeResponse {
 export interface AnimeRecommandationResponse {
     data : AnimeRecommandationType[]
 }
+
+// Type for anime Staff Response
+export interface AnimeStaffResponse {
+    data : AnimeStaffType[]
+}
