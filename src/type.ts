@@ -311,3 +311,8 @@ export interface InputType {
 export interface AnimeDetailResponse {
     data : AnimeDetailType
 }
+
+// Type for anime images response
+export interface AnimeImageResponse {
+    data : AnimeImageType[]
+}
