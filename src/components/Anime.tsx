@@ -8,7 +8,7 @@ export default function Anime({id, image, title} : AnimeProps)
 {
     return(
         
-            <div className="relative mx-auto w-56.25 h-75 hover:shadow-lg shadow-black duration-300 cursor-pointer">
+            <div className="relative mx-auto max-w-56.25 h-75 hover:shadow-lg shadow-black duration-300 cursor-pointer">
                 {
                     image && 
                     <img className="w-full rounded-md h-full object-cover object-center" src={image} alt={title? title : "Unknown"} />

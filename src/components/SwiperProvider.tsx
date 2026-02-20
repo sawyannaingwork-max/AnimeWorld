@@ -55,7 +55,7 @@ export default function SwiperProvider({ children }: { children: ReactNode }) {
         }}
         breakpoints={{
           0: { slidesPerView: 1 },
-          500: { slidesPerView: 2 },
+          600 : {slidesPerView : 2},
           1200: { slidesPerView: 3 },
         }}
         className="w-[90%] h-100"

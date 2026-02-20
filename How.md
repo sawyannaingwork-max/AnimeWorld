@@ -131,3 +131,28 @@ I can create another Header and use that Header for other page.
 Approach one will be much more effiency but style wise a little worse.
 Approach two is not effiency because I have to add Header 2 to every page.
 So Yes Approach One :(
+
+### Anime Detail Page
+This is simple fetch api and display on screen that's.
+api endpoints
+
+For Info
+https://api.jikan.moe/v4/anime/{id}
+
+For images
+https://api.jikan.moe/v4/anime/{id}/pictures
+
+For Recommandation
+https://api.jikan.moe/v4/anime/{id}/recommendations
+
+For Character
+https://api.jikan.moe/v4/anime/{id}/characters 
+
+For Episodes
+https://api.jikan.moe/v4/anime/{id}/eipsodes
+
+For Staff
+https://api.jikan.moe/v4/anime/{id}/staff
+
+For Review
+https://api.jikan.moe/v4/anime/{id}/reviews
