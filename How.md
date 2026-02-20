@@ -137,7 +137,7 @@ This is simple fetch api and display on screen that's.
 api endpoints
 
 For Info
-https://api.jikan.moe/v4/anime/{id}
+https://api.jikan.moe/v4/anime/{id}/full
 
 For images
 https://api.jikan.moe/v4/anime/{id}/pictures

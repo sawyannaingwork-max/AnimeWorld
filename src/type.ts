@@ -32,6 +32,7 @@ export interface AnimeType {
     rating : string | null,
     score : number,
     scored_by : number | null,
+    members : number | null,
     rank : number | null,
     popularity : number | null,
     favorites : number | null,
@@ -304,4 +305,9 @@ export interface InputType {
     type : "" | "tv" | "movie" | "ova" | "special" | "ona" | "music" | "cm" | "pv" | "tv_special",
     filter : "" | "airing" | "upcoming" | "bypopularity" | "favorite",
     rating : "" | "g" | "pg" | "pg13" | "r17" | "r" | "rx"
+}
+
+// Type for anime detail response
+export interface AnimeDetailResponse {
+    data : AnimeDetailType
 }
