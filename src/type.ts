@@ -289,9 +289,9 @@ export interface PersonVoiceType {
 
 // Type for common ressponse 
 export interface metaType {
-    last_visible_page : number | null,
-    has_next_page : boolean | null,
-    current_page : number | null
+    last_visible_page ?: number | null,
+    has_next_page ?: boolean | null,
+    current_page ?: number | null
 }
 
 // Type for animeListresponse
@@ -320,4 +320,23 @@ export interface AnimeImageResponse {
 // Type for anime character response
 export interface AnimeCharacterResponse {
     data : AnimeCharacterType[]
+}
+
+// Type for anime episodes
+export interface AnimeEpisodeType {
+    mal_id : number | null,
+    url : string | null,
+    title : string | null,
+    aired : string | null,
+    score : number | null,
+    filter : boolean | null
+}
+
+// type for anime episodes response
+export interface AnimeEpisodeResponse {
+    pagination : {
+        last_visible_page ?: number | null,
+        has_next_page ?: boolean | null
+    },
+    data : AnimeEpisodeType[]
 }

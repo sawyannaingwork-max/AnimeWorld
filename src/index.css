@@ -85,3 +85,9 @@
 {
     @apply bg-box font-itim px-2 py-1 text-center text-background rounded-md;
 }
+
+table, td, th
+{
+    border-collapse: collapse;
+    border: 1px solid black;
+}

@@ -2,6 +2,7 @@ import { useParams } from "react-router"
 import Info from "./Info"
 import Images from "./Images"
 import Characters from "./Characters"
+import Episodes from "./Episodes"
 
 export default function AnimeDetail()
 {
@@ -18,6 +19,7 @@ export default function AnimeDetail()
             <Info id={id} />
             <Images id={id} />
             <Characters id={id} />
+            <Episodes id={id} />
         </div>
     )
 }
