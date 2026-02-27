@@ -21,7 +21,7 @@ export default function Anime({id, image, title} : AnimeProps)
 
                 <div className="bg-[rgba(0,0,0,0.7)] absolute bottom-0 w-full py-2 px-2 rounded-b-md">
                     <h2 className="pb-2 font-itim text-secondary">{title? title : "Unknown"}</h2>
-                    <button onClick={() => navigate(`anime/${id}`)} className="primary-btn">Look Detail</button>
+                    <button onClick={() => navigate(`/anime/${id}`)} className="primary-btn">Look Detail</button>
                 </div>
             </div>
             
