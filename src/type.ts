@@ -352,3 +352,9 @@ export interface AnimeRecommandationResponse {
 export interface AnimeStaffResponse {
     data : AnimeStaffType[]
 }
+
+// Type for anime review Response
+export interface AnimeReviewResponse {
+    pagination : metaType,
+    data : AnimeReviewType[]
+}
