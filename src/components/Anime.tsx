@@ -8,7 +8,6 @@ interface AnimeProps {
 }
 export default function Anime({id, image, title} : AnimeProps)
 {
-    console.log(image)
     const navigate = useNavigate()
 
     return(

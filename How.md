@@ -156,3 +156,26 @@ https://api.jikan.moe/v4/anime/{id}/staff
 
 For Review
 https://api.jikan.moe/v4/anime/{id}/reviews
+
+
+## Character Detail Page
+
+### Basis Info 
+This page show the name, the image and the about of anime character 
+fetch url- https://api.jikan.moe/v4/characters/id
+
+### images
+This page show the iamges of the character
+fetch url - https://api.jikan.moe/v4/characters/id/pictures
+
+### Anime Appearance
+This page show the animes that character is in
+fetch url - https://api.jikan.moe/v4/characters/id/anime
+
+### Manga Appearance
+This page show the mangas that character is in
+fetch url - https://api.jikan.moe/v4/characters/id/manga
+
+### Voice Actors
+This Page show the voices actors of an anime character 
+fetch url - https://api.jikan.moe/v4/characters/id/voices

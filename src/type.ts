@@ -183,11 +183,21 @@ export interface CharacterType {
     about : string | null,
 }
 
+// Type for anime character response
+export interface CharacterResponse {
+    data : CharacterType
+}
+
 // Type for anime character pictures
 export interface CharacterPicType {
     jpg : {
         image_url ?: string | null
     }
+}
+
+// Type for anime character pic response
+export interface CharacterPicResponse {
+    data : CharacterPicType[]
 }
 
 // Type for anime character anime
@@ -204,6 +214,11 @@ export interface CharacterAnimeType {
     }
 }
 
+// Type for anime characeter anime response
+export interface CharacterAnimeResponse {
+    data : CharacterAnimeType[]
+}
+
 // Type for anime character manga
 export interface CharacterMangaType {
     role : string | null,
@@ -218,6 +233,11 @@ export interface CharacterMangaType {
     }
 }
 
+// Type for anime character manga response
+export interface characeterMangaResponse {
+    data : CharacterMangaType[]
+}
+
 // Type for anime character voices
 export interface CharacterVoiceType {
     language : string | null,
@@ -230,6 +250,11 @@ export interface CharacterVoiceType {
         },
         name : string | null
     }
+}
+
+// Type for anime character voices response
+export interface CharacterVoiceResponse {
+    data : CharacterVoiceType[]
 }
 
 // Type for person
