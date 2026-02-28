@@ -16,7 +16,7 @@ export default function CharDetail()
     }
 
     return(
-        <div>
+        <div className="bg-linear-to-b from-[#FFFFFF] to-[#79CBCA]">
             <BasicInfo id= {id} />
             <Images id = {id} />
             <Animes id = {id} />
