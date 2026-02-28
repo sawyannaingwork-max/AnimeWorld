@@ -2,9 +2,13 @@ import { SwiperSlide } from "swiper/react"
 import SwiperProvider from "../components/SwiperProvider"
 import useJikan from "../components/useJikan"
 import type { AnimeCharacterResponse } from "../type"
+import { useNavigate } from "react-router"
 
 export default function Characters({id} : {id : string})
 {
+    // For navigating
+    const navigate = useNavigate()
+
     // Fetching data
     const { data, isFetching, isError } = useJikan<AnimeCharacterResponse>(["Anime Characters", id], `https://api.jikan.moe/v4/anime/${id}/characters`)
 
@@ -41,7 +45,7 @@ export default function Characters({id} : {id : string})
                                             <h3 className="text-secondary font-itim pb-2">{char.character?.name ? char.character.name : "Unknown"} <span className="text-primary">({char.role && char.role})</span></h3>
                                             {
                                                 char.character?.mal_id && 
-                                                <button className="primary-btn">Look Detail</button>
+                                                <button onClick={() => navigate(`/character/${char.character.mal_id}`)} className="primary-btn">Look Detail</button>
                                             }
                                         </div>
                                     </div>
