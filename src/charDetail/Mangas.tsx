@@ -22,14 +22,14 @@ export default function Mangas({id} : {id : string})
     return(
         <div className="mt-9 w-[90%] mx-auto">
             <h2 className="text-center font-alice text-2xl pb-5">Manga Appearance</h2>
-            <div className="gap-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+            <div className="flex justify-center gap-5 flex-wrap">
                 {
                     mangas.map((manga, index) => {
                         return(
-                            <div key={index}>
+                            <div key={index} className="w-55">
                                 {
                                     manga.manga?.images?.jpg?.image_url && 
-                                    <img className="w-56.25 h-75 mx-auto object-cover rounded-md" src={manga.manga.images.jpg.image_url} alt={manga.manga?.title? manga.manga.title : "Unknown"} />
+                                    <img className="w-full h-75 mx-auto object-cover rounded-md" src={manga.manga.images.jpg.image_url} alt={manga.manga?.title? manga.manga.title : "Unknown"} />
                                 }
                                 <h3 className="font-itim pt-2">{manga.manga?.title? manga.manga.title : "Unknown"}</h3>
                             </div>

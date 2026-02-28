@@ -22,11 +22,11 @@ export default function Voices({id} : {id : string})
     return(
         <div className="mt-9 w-[90%] mx-auto">
             <h2 className="text-center text-2xl font-alice mb-5">Voices Actors</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
+            <div className="flex justify-center flex-wrap gap-5">
                 {
                     voices.map((voice, index) => {
                         return(
-                            <div key={index} className="mx-auto sm:mx-0">
+                            <div key={index} className="w-55">
                                 {
                                     voice.person?.images?.jpg?.image_url && 
                                     <img className="shadow-md shadow-gray-500 rounded-md w-full h-87.5 object-cover object-center" src={voice.person.images.jpg.image_url} alt={voice.person.name? voice.person.name : "Unkonwn"} />
