@@ -4,6 +4,7 @@ import Home from "./home/Home"
 import AnimePage from "./anime/AnimePage"
 import AnimeDetail from "./animeDetail/AnimeDetail"
 import CharDetail from "./charDetail/CharDetail"
+import PersonDetail from "./people/PersonDetail"
 
 export default function App()
 {
@@ -16,6 +17,7 @@ export default function App()
                 <Route path="/anime" element={<AnimePage />} />
                 <Route path="/anime/:id" element={<AnimeDetail />} />
                 <Route path="/character/:id" element={<CharDetail />} />
+                <Route path="/people/:id" element={<PersonDetail />} />
             </Routes>
         </div>
     )

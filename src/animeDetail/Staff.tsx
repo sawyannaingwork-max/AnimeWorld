@@ -1,8 +1,11 @@
+import { useNavigate } from "react-router";
 import useJikan from "../components/useJikan";
 import type { AnimeStaffResponse } from "../type";
 
 export default function Staff({id} : {id : string})
 {
+    const navigate = useNavigate()
+    
     // Fetching
     const { data, isFetching, isError } = useJikan<AnimeStaffResponse>(["Anime Staff", id], `https://api.jikan.moe/v4/anime/${id}/staff`)
 
@@ -28,7 +31,7 @@ export default function Staff({id} : {id : string})
             {
                 staffs.map((staff, index) => {
                     return(
-                        <div key={index} className="w-50">
+                        <div key={index} className="w-50" onClick={() => navigate(`/people/${staff.person.mal_id}`)}>
                             {
                                 staff.person.images?.jpg?.image_url && 
                                 <img className="shadow-md shadow-gray-600 rounded-md w-full h-75 object-cover" src={staff.person.images.jpg.image_url} alt={staff.person.name? staff.person.name : "Unknown"} />

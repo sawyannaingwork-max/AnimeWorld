@@ -270,11 +270,21 @@ export interface PersonType {
     about : string | null
 }
 
+// Type for person response
+export interface PersonResponse {
+    data : PersonType
+}
+
 // Type for person image
 export interface PersonImageType {
     jpg : {
         image_url ?: string | null
     }
+}
+
+// Tpye for person image response
+export interface PersonImageResponse {
+    data : PersonImageType[]
 }
 
 // Type for person anime
@@ -289,6 +299,11 @@ export interface PersonAnimeType {
         },
         title : string | null
     }
+}
+
+// Type for person anime respnse
+export interface PersonAnimeResponse {
+    data : PersonAnimeType[]
 }
 
 // Type for person voices acting
@@ -312,6 +327,11 @@ export interface PersonVoiceType {
         },
         name ?: string | null
     }
+}
+
+// Type for person voices response
+export interface PersonVoiceResponse {
+    data : PersonVoiceType[]
 }
 
 // Type for common ressponse 

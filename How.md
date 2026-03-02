@@ -179,3 +179,22 @@ fetch url - https://api.jikan.moe/v4/characters/id/manga
 ### Voice Actors
 This Page show the voices actors of an anime character 
 fetch url - https://api.jikan.moe/v4/characters/id/voices
+
+## Person Detail Page
+This page show the detail of a person who is working on anime industry
+
+### Basic Info
+This part show the basic info photo and about of a person
+fetchurl - https://api.jikan.moe/v4/person/id
+
+### Images
+This part show the images of the person as a slider
+fetchurl - https://api.jikan.moe/v4/person/id/pictures
+
+### Anime
+this part show the anime of the person had worked on
+fetchurl - https://api.jikan.moe/v4/people/id/anime
+
+### Vices
+This part show the character and the anime of the person voice acting
+fetchurl - https://api.jikan.moe/v4/people/id/voices
