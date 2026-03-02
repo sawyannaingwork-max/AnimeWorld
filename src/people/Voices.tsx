@@ -1,4 +1,3 @@
-import { useRef } from "react";
 import useJikan from "../components/useJikan";
 import type { PersonVoiceResponse } from "../type";
 import VoiceCard from "./VoiceCard";

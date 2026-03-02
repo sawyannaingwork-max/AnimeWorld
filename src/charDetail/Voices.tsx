@@ -1,8 +1,11 @@
+import { useNavigate } from "react-router";
 import useJikan from "../components/useJikan";
 import type { CharacterVoiceResponse } from "../type";
 
 export default function Voices({id} : {id : string})
 {
+    const navigate = useNavigate()
+
     // Fetching Data
     const { data, isFetching, isError } = useJikan<CharacterVoiceResponse>(["Voices Actors Character", id], `https://api.jikan.moe/v4/characters/${id}/voices`)
 
@@ -26,7 +29,7 @@ export default function Voices({id} : {id : string})
                 {
                     voices.map((voice, index) => {
                         return(
-                            <div key={index} className="w-55">
+                            <div key={index} className="w-55 cursor-pointer" onClick={() => navigate(`/people/${voice.person.mal_id}`)}>
                                 {
                                     voice.person?.images?.jpg?.image_url && 
                                     <img className="shadow-md shadow-gray-500 rounded-md w-full h-87.5 object-cover object-center" src={voice.person.images.jpg.image_url} alt={voice.person.name? voice.person.name : "Unkonwn"} />
