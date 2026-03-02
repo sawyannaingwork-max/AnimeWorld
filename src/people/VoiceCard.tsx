@@ -35,7 +35,7 @@ export default function VoiceCard(props : PersonVoiceType)
         
     }
     return(
-        <div className="w-56.25 h-105 relative">
+        <div className="w-55 mx-auto h-105 relative">
             <div onClick={handleCharacterClick} ref={characterRef} className="absolute top-0 left-0 w-full h-full cursor-pointer">
                 {
                     props.character.images?.jpg?.image_url && 

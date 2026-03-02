@@ -23,7 +23,7 @@ export default function Voices({id} : {id : string})
     return(
         <div className="mt-9 w-[90%] mx-auto">
             <h2 className="text-center text-2xl font-alice text-text mb-5">Voices</h2>
-            <div className="flex flex-wrap gap-5 justify-center">
+            <div className="flex flex-wrap gap-10 justify-center">
                 {
                     voices.map((voice, index) => {
                         return(
