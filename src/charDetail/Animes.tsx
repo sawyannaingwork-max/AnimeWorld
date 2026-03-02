@@ -23,7 +23,7 @@ export default function Animes({id} : {id : string})
     return(
         <div className="mt-9 w-[90%] mx-auto">
             <h2 className="text-center text-2xl font-alice mb-5">Anime Appearance</h2>
-            <div className="flex justify-center gap-5 flex-wrap">
+            <div className="flex justify-center flex-wrap gap-10">
                 {
                     animes.map((anime, index) => {
                         return(
