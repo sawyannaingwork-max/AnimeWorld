@@ -1,4 +1,5 @@
 import useJikan from "../components/useJikan";
+import CharacterMangaSkeleton from "../loader/CharacterMangaSkeleton";
 import type { characeterMangaResponse } from "../type";
 
 export default function Mangas({id} : {id : string})
@@ -8,7 +9,7 @@ export default function Mangas({id} : {id : string})
 
     if (isFetching)
     {
-        return <p>Loading...</p>
+        return <CharacterMangaSkeleton />
     }
 
     if (isError || !data)

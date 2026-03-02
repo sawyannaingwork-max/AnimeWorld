@@ -1,6 +1,7 @@
 import { useState } from "react"
 import useJikan from "../components/useJikan"
 import type { AnimeEpisodeResponse } from "../type"
+import AnimeEpisodesSkeleton from "../loader/AnimeEpisodeSkeleton"
 
 export default function Episodes({id} : {id : string})
 {
@@ -12,7 +13,7 @@ export default function Episodes({id} : {id : string})
     
     if (isFetching)
     {
-        return <p>Loading...</p>
+        return <AnimeEpisodesSkeleton />
     }
 
     if (isError || !data)

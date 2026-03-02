@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router";
 import useJikan from "../components/useJikan";
 import type { AnimeStaffResponse } from "../type";
+import AnimeStaffSkeleton from "../loader/AnimeStaffSkeleton";
 
 export default function Staff({id} : {id : string})
 {
@@ -11,7 +12,7 @@ export default function Staff({id} : {id : string})
 
     if (isFetching)
     {
-        return <p>Loading...</p>
+        return <AnimeStaffSkeleton />
     }
 
     if (isError || !data)

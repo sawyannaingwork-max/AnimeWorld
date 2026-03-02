@@ -1,4 +1,5 @@
 import useJikan from "../components/useJikan";
+import CharacterBasicInfoSkeleton from "../loader/CharacterBasicInfoSkeleton";
 import type { CharacterResponse } from "../type";
 
 export default function BasicInfo({id} : {id : string})
@@ -8,7 +9,7 @@ export default function BasicInfo({id} : {id : string})
 
     if (isFetching)
     {
-        return <p>Loading..</p>
+        return <CharacterBasicInfoSkeleton />
     }
 
     if (isError || !data)

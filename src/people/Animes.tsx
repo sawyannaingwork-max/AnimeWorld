@@ -3,6 +3,7 @@ import SwiperProvider from "../components/SwiperProvider";
 import useJikan from "../components/useJikan";
 import  type { PersonAnimeResponse } from "../type";
 import Anime from "../components/Anime";
+import PersonAnimeSkeleton from "../loader/PersonAnimeSkeleton";
 
 export default function Animes({id} : {id : string})
 {
@@ -10,7 +11,7 @@ export default function Animes({id} : {id : string})
 
     if (isFetching)
     {
-        return <p>Loading...</p>
+        return <PersonAnimeSkeleton />
     }
 
     if (isError || !data)

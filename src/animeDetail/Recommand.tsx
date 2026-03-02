@@ -3,6 +3,7 @@ import SwiperProvider from "../components/SwiperProvider"
 import useJikan from "../components/useJikan"
 import type { AnimeRecommandationResponse } from "../type"
 import Anime from "../components/Anime"
+import AnimeRecommandSkeleton from "../loader/AnimeRecommandSkeleton"
 
 export default function Recommand({id} : {id : string})
 {
@@ -11,7 +12,7 @@ export default function Recommand({id} : {id : string})
     
     if (isFetching)
     {
-        return <p>Loading...</p>
+        return <AnimeRecommandSkeleton />
     }
 
     if (isError || !data)

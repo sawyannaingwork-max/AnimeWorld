@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router";
 import useJikan from "../components/useJikan";
 import type { CharacterVoiceResponse } from "../type";
+import CharacterVoicesSkeleton from "../loader/CharacterVoicesSkeleton";
 
 export default function Voices({id} : {id : string})
 {
@@ -11,7 +12,7 @@ export default function Voices({id} : {id : string})
 
     if (isFetching)
     {
-        return <p>Loading...</p>
+        return <CharacterVoicesSkeleton />
     }
 
     if (isError || !data)

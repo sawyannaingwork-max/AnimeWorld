@@ -1,4 +1,5 @@
 import useJikan from "../components/useJikan";
+import PersonVoicesSkeleton from "../loader/PersonVoicesSkeleton";
 import type { PersonVoiceResponse } from "../type";
 import VoiceCard from "./VoiceCard";
 
@@ -9,7 +10,7 @@ export default function Voices({id} : {id : string})
 
     if (isFetching)
     {
-        return <p>Loading...</p>
+        return <PersonVoicesSkeleton />
     }
 
     if (isError || !data)

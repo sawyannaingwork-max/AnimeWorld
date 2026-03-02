@@ -3,6 +3,7 @@ import SwiperProvider from "../components/SwiperProvider"
 import useJikan from "../components/useJikan"
 import type { AnimeCharacterResponse } from "../type"
 import { useNavigate } from "react-router"
+import AnimeCharacterSkeleton from "./../loader/AnimeCharacterSkeleton"
 
 export default function Characters({id} : {id : string})
 {
@@ -14,7 +15,7 @@ export default function Characters({id} : {id : string})
 
     if (isFetching)
     {
-        return <p>Loading...</p>
+        return <AnimeCharacterSkeleton />
     }
 
     if (isError || !data)

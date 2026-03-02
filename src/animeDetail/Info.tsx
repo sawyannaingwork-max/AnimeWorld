@@ -1,4 +1,5 @@
 import useJikan from "../components/useJikan";
+import AnimeInfoSkeleton from "../loader/AnimeInfoSkeleton";
 import type { AnimeDetailResponse } from "../type";
 
 export default function Info({id} : {id : string})
@@ -8,7 +9,7 @@ export default function Info({id} : {id : string})
 
     if (isFetching)
     {
-        return <p>Loading...</p>
+        return <AnimeInfoSkeleton />
     }
     
     if (isError || !data)

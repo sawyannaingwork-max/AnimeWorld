@@ -2,6 +2,7 @@ import { useInfiniteQuery } from "@tanstack/react-query";
 import type { AnimeReviewResponse } from "../type";
 import Review from "./Review";
 import { useEffect } from "react";
+import AnimeReviewsSkeleton from "../loader/AnimeReviewSkeleton";
 export default function Reviews({id} : {id : string})
 {
     
@@ -53,7 +54,7 @@ export default function Reviews({id} : {id : string})
 
     if (isLoading)
     {
-        return <p>Loading...</p>
+        return <AnimeReviewsSkeleton />
     }
 
     if (isError || !data)

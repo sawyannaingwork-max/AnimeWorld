@@ -2,6 +2,7 @@ import { SwiperSlide } from "swiper/react";
 import SwiperProvider from "../components/SwiperProvider";
 import useJikan from "../components/useJikan";
 import type { PersonImageResponse } from "../type";
+import AnimeImagesSkeleton from "../loader/AnimeImageSkeleton";
 
 export default function Images({id} : {id : string})
 {
@@ -10,7 +11,7 @@ export default function Images({id} : {id : string})
 
     if (isFetching)
     {
-        return <p>Loading....</p>
+        return <AnimeImagesSkeleton />
     }
 
     if (isError || !data)

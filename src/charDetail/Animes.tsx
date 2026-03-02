@@ -1,5 +1,6 @@
 import Anime from "../components/Anime";
 import useJikan from "../components/useJikan";
+import CharacterAnimesSkeleton from "../loader/CharacterAnimeSkeleton";
 import type { CharacterAnimeResponse } from "../type";
 
 export default function Animes({id} : {id : string})
@@ -9,7 +10,7 @@ export default function Animes({id} : {id : string})
 
     if (isFetching)
     {
-        return <p>Loading...</p>
+        return <CharacterAnimesSkeleton />
     }
 
     if (isError || !data)
