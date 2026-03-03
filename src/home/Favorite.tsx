@@ -5,10 +5,38 @@ import SwiperProvider from "../components/SwiperProvider";
 import Anime from "../components/Anime";
 import { SwiperSlide } from "swiper/react";
 
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/all";
+import { useRef } from "react";
+
+gsap.registerPlugin(ScrollTrigger)
+
 export default function Favorite()
 {
+    const favoriteRef = useRef<HTMLDivElement | null>(null)
     // Fetching Data
     const { data, isFetching, isError } = useJikan<animeListResponseType>(["Favorite Anime"], "https://api.jikan.moe/v4/top/anime?filter=favorite")
+
+    useGSAP(() => {
+
+        if (!favoriteRef.current)
+        {
+            return 
+        }
+
+        gsap.from(favoriteRef.current, {
+            opacity : 0,
+            y : -50,
+            duration : 1.2,
+            ease : "sine",
+            scrollTrigger : {
+                trigger : favoriteRef.current,
+                start : "top bottom"
+            }
+        })
+
+    }, { scope : favoriteRef, dependencies : [isFetching]})
 
     if (isFetching)
     {
@@ -23,7 +51,7 @@ export default function Favorite()
     const animes = data.data 
 
     return(
-        <div className="mt-9">
+        <div className="mt-9" ref={favoriteRef}>
             <h1 className="text-center font-alice mb-5 text-2xl">Favorite</h1>
             <SwiperProvider>
             {

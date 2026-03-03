@@ -22,12 +22,11 @@ export default function SwiperProvider({ children }: { children: ReactNode }) {
       />
 
       <Swiper
-        modules={[Pagination, Navigation, EffectCoverflow]}
+        modules={[Navigation, EffectCoverflow]}
         spaceBetween={20}
         effect="coverflow"
         centeredSlides
         loop
-        pagination={{ clickable: true }}
         coverflowEffect={{
           depth: 200,
           stretch : 80,

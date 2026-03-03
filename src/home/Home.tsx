@@ -5,13 +5,21 @@ import Popular from "./Popular";
 import Result from "./Result";
 import Upcoming from "./Upcoming";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import {useQuery } from "@tanstack/react-query";
+
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/all";
+
+gsap.registerPlugin(ScrollTrigger)
 
 export default function Home()
 {
     // Defining state for search bar of header
     const [search, setSearch] = useState<string>("")
+
+    const heroRef = useRef<HTMLDivElement | null>(null)
 
     // Defining state for apply search
     const [applySearch, setApplySearch] = useState<string>("")
@@ -46,9 +54,23 @@ export default function Home()
         setPage(1)
     }
 
+    // Animation
+    useGSAP(() => {
+        gsap.to(heroRef.current, {
+            height : "50vh",
+            duration : 2,
+            ease : "sine",
+            scrollTrigger : {
+                trigger : heroRef.current,
+                start : "top top",
+                end : "+400",
+            }
+        })
+    }, {scope : heroRef, dependencies : []})
+
     return(
         <>
-            <div className="text-background font-albert bg-linear-to-tr from-secondary to-primary h-[50vh] flex flex-col text-center justify-center gap-10">
+            <div ref={heroRef} className="text-background  font-albert bg-linear-to-tr from-secondary to-primary h-screen flex flex-col text-center justify-center gap-10">
                 <h1 className="w-[90%] mx-auto text-3xl">Your Gateway to the Anime Universe</h1>
                 <p className="w-[90%] mx-auto text-xl">From timeless classics to the latest releases, dive deep into worlds that inspire, move, and excite.</p>
                 <form onSubmit={handleSubmit} className="w-[90%] mx-auto flex" action="#">
