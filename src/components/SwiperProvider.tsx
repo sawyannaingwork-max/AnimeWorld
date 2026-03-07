@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { Swiper } from "swiper/react";
 import type { ReactNode } from "react";
-import { Pagination, Navigation, EffectCoverflow } from "swiper/modules";
+import { Navigation, EffectCoverflow } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";
 
 import arrow from "./../assets/arrow.svg";

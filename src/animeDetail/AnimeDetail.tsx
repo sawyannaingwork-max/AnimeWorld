@@ -27,7 +27,7 @@ export default function AnimeDetail()
             <Characters id={id} />
             <Episodes id={id} />
             <Recommand id={id} />
-            <div className="sticky top-13 border-text border flex mt-9 rounded-md justify-center bg-background font-itim w-[90%] mx-auto max-w-100">
+            <div className="sticky z-10 top-13 border-text border flex mt-9 rounded-md justify-center bg-background font-itim w-[90%] mx-auto max-w-100">
                 <div onClick={() => setStatus("staff")} className={`w-1/2 rounded-tl-md rounded-bl-md cursor-pointer py-2 text-center ${status === "staff" ? "bg-text text-background" : ""}`}>Staff</div>
                 <div onClick={() => setStatus("reviews")} className={`w-1/2 rounded-tl-md rounded-bl-md cursor-pointer py-2 text-center ${status === "reviews" ? "bg-text text-background" : ""}`}>Reviews</div>
             </div>

@@ -4,14 +4,43 @@ import useJikan from "../components/useJikan"
 import type { AnimeCharacterResponse } from "../type"
 import { useNavigate } from "react-router"
 import AnimeCharacterSkeleton from "./../loader/AnimeCharacterSkeleton"
+import { useRef } from "react"
+
+import gsap from "gsap"
+import { useGSAP } from "@gsap/react"
+import { ScrollTrigger } from "gsap/all"
+
+gsap.registerPlugin(ScrollTrigger)
+
 
 export default function Characters({id} : {id : string})
 {
     // For navigating
     const navigate = useNavigate()
 
+    const characterRef = useRef<HTMLDivElement | null>(null)
+
     // Fetching data
     const { data, isFetching, isError } = useJikan<AnimeCharacterResponse>(["Anime Characters", id], `https://api.jikan.moe/v4/anime/${id}/characters`)
+
+    useGSAP(() => {
+
+        if (!characterRef.current)
+        {
+            return 
+        }
+
+        gsap.from(characterRef.current, {
+            y : 50,
+            opacity : 0,
+            duration : 2,
+            scrollTrigger : {
+                trigger : characterRef.current,
+                start : "top 70%"
+            }
+        })
+
+    }, { scope : characterRef, dependencies : [isFetching]})
 
     if (isFetching)
     {
@@ -31,7 +60,7 @@ export default function Characters({id} : {id : string})
     }
 
     return(
-        <div className="mt-9">
+        <div className="mt-9" ref={characterRef}>
             <h2 className="text-2xl font-alice text-center pb-5">Characters</h2>
             <SwiperProvider>
                 {

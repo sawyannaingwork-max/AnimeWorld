@@ -3,9 +3,9 @@ import type { AnimeReviewResponse } from "../type";
 import Review from "./Review";
 import { useEffect } from "react";
 import AnimeReviewsSkeleton from "../loader/AnimeReviewSkeleton";
+
 export default function Reviews({id} : {id : string})
 {
-    
     // Fetching Data Infinitely
     const { data, isLoading, hasNextPage, fetchNextPage, isFetchingNextPage, isError } = useInfiniteQuery<AnimeReviewResponse>({
         queryKey : ["Anime Review", id],

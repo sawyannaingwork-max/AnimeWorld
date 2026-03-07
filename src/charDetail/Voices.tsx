@@ -2,13 +2,43 @@ import { useNavigate } from "react-router";
 import useJikan from "../components/useJikan";
 import type { CharacterVoiceResponse } from "../type";
 import CharacterVoicesSkeleton from "../loader/CharacterVoicesSkeleton";
+import { useRef } from "react";
+
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/all";
+
+gsap.registerPlugin(ScrollTrigger)
+
 
 export default function Voices({id} : {id : string})
 {
     const navigate = useNavigate()
-
+    const voiceRef = useRef<HTMLDivElement | null>(null)
     // Fetching Data
     const { data, isFetching, isError } = useJikan<CharacterVoiceResponse>(["Voices Actors Character", id], `https://api.jikan.moe/v4/characters/${id}/voices`)
+
+    useGSAP(() => {
+        if (!voiceRef.current)
+        {
+            return 
+        }
+
+        const elements : HTMLDivElement[] = gsap.utils.toArray(voiceRef.current.children)
+
+        elements.forEach(element => {
+            gsap.from(element, {
+                y : 30,
+                opacity : 0,
+                ease : "sine",
+                duration : 0.4,
+                scrollTrigger : {
+                    trigger : element,
+                    start : "top 80%"
+                }
+            })
+        })
+    }, { scope : voiceRef, dependencies : [isFetching]})
 
     if (isFetching)
     {
@@ -23,10 +53,15 @@ export default function Voices({id} : {id : string})
     // Getting data
     const voices = data.data
 
+    if (voices.length === 0)
+    {
+        return 
+    }
+
     return(
         <div className="mt-9 w-[90%] mx-auto">
             <h2 className="text-center text-2xl font-alice mb-5">Voices Actors</h2>
-            <div className="flex justify-center flex-wrap gap-10">
+            <div className="flex justify-center flex-wrap gap-10" ref={voiceRef}>
                 {
                     voices.map((voice, index) => {
                         return(

@@ -1,16 +1,43 @@
-import { useState } from "react"
+import { useRef, useState } from "react"
 import useJikan from "../components/useJikan"
 import type { AnimeEpisodeResponse } from "../type"
 import AnimeEpisodesSkeleton from "../loader/AnimeEpisodeSkeleton"
+
+import gsap from "gsap"
+import { useGSAP } from "@gsap/react"
+import { ScrollTrigger } from "gsap/all"
+
+gsap.registerPlugin(ScrollTrigger)
+
 
 export default function Episodes({id} : {id : string})
 {
     // Defining state
     const [page, setPage] = useState<number>(1)
 
+    const episodeRef = useRef<HTMLDivElement | null>(null)
+
     // Fetching data
     const { data, isFetching, isError } = useJikan<AnimeEpisodeResponse>(["Anime Episodes", id, page], `https://api.jikan.moe/v4/anime/${id}/episodes?page=${page}`)
     
+    useGSAP(() => {
+        if (!episodeRef.current)
+        {
+            return 
+        }
+
+        gsap.from(episodeRef.current, {
+            opacity : 0,
+            x : -50,
+            duration : 2,
+            ease : "sine",
+            scrollTrigger : {
+                trigger : episodeRef.current,
+                start : "top 70%"
+            }
+        })
+    }, { scope : episodeRef, dependencies : [isFetching]})
+
     if (isFetching)
     {
         return <AnimeEpisodesSkeleton />
@@ -29,7 +56,7 @@ export default function Episodes({id} : {id : string})
     }
 
     return(
-        <div className="w-[90%] mx-auto mt-9">
+        <div className="w-[90%] mx-auto mt-9" ref={episodeRef}>
             <h2 className="mb-5 text-center text-2xl font-alice">Episodes</h2>
             <table className="w-full">
                 <thead className="bg-primary text-background font-albert">

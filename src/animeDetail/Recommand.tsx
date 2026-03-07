@@ -4,12 +4,40 @@ import useJikan from "../components/useJikan"
 import type { AnimeRecommandationResponse } from "../type"
 import Anime from "../components/Anime"
 import AnimeRecommandSkeleton from "../loader/AnimeRecommandSkeleton"
+import { useRef } from "react"
+
+import gsap from "gsap"
+import { useGSAP } from "@gsap/react"
+import { ScrollTrigger } from "gsap/all"
+
+gsap.registerPlugin(ScrollTrigger)
+
 
 export default function Recommand({id} : {id : string})
 {
+    const recommandRef = useRef<HTMLDivElement | null>(null)
+
     // Fetching Data
     const { data, isFetching, isError } = useJikan<AnimeRecommandationResponse>(["Anime Recommandation", id], `https://api.jikan.moe/v4/anime/${id}/recommendations`)
     
+    useGSAP(() => {
+
+        if (!recommandRef.current)
+        {
+            return 
+        }
+
+        gsap.from(recommandRef.current, {
+            y : 50,
+            opacity : 0,
+            duration : 0.7,
+            ease : "sine",
+            scrollTrigger : {
+                trigger : recommandRef.current,
+                start : "top 70%"
+            }
+        })
+    }, {scope : recommandRef, dependencies : [isFetching]})
     if (isFetching)
     {
         return <AnimeRecommandSkeleton />
@@ -28,7 +56,7 @@ export default function Recommand({id} : {id : string})
     }
 
     return(
-        <div className="mt-9">
+        <div className="mt-9" ref={recommandRef}>
             <h2 className="text-center pb-5 font-alice text-2xl text-text">Recommands</h2>
             <SwiperProvider>
                 {
