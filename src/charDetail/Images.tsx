@@ -51,6 +51,32 @@ export default function Images({id} : {id : string})
     // Getting the images list 
     const images = data.data
 
+    // for not image
+    if (images.length === 0)
+    {
+        return 
+    }
+
+    if (images.length < 5)
+    {
+        return(
+            <div className="flex justify-center gap-10 flex-wrap mt-9 w-[90%] mx-auto">
+                {
+                images.map((img, index) => {
+                    if (img.jpg?.image_url)
+                    {
+                        return(
+                            <img key={index} className="w-56.25 h-75 mx-auto object-cover rounded-md" src={img.jpg.image_url} alt="Image" /> 
+                        )
+                    }
+
+                    return
+                })
+            }
+            </div>
+        )
+    }
+
     return(
         <div className="mt-9" ref={imageRef}>
             <SwiperProvider>

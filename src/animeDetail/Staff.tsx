@@ -56,7 +56,7 @@ export default function Staff({id} : {id : string})
 
     if (staffs.length === 0)
     {
-        return <p>No Staff List</p>
+        return <p className="w-[90%] mx-auto text-2xl font-albert text-red-500">No Staff List</p>
     }
 
     return(

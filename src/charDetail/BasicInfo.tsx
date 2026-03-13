@@ -78,7 +78,7 @@ export default function BasicInfo({id} : {id : string})
                 character.name && <h1 className="char-name text-center font-alice text-3xl text-text">{character.name}</h1>
             }
             {
-                character.images?.jpg?.image_url && <img className="char-img mt-5 mx-auto rounded-md shadow-lg shadow-gray-400 " src={character.images.jpg.image_url} alt={character.name? character.name : "Unknown"} />
+                character.images?.jpg?.image_url && <img className="char-img w-80 mt-5 mx-auto rounded-md shadow-lg shadow-gray-400 " src={character.images.jpg.image_url} alt={character.name? character.name : "Unknown"} />
             }
 
             {

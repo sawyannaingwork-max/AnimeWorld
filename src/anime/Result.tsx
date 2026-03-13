@@ -36,6 +36,12 @@ export default function Result({input, page, setPage} : ResultProps)
     const pagination = data.pagination
     const animes = data.data
 
+    // For no result
+    if (animes.length === 0)
+    {
+        return <p className="w-[90%] mx-auto text-red-500 font-albert text-2xl">No Result For Your Search.</p>
+    }
+
     return (
         <div className="w-[90%] mx-auto">
             <div className="grid gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6">

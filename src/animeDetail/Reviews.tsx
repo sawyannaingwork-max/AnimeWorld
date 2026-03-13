@@ -64,6 +64,11 @@ export default function Reviews({id} : {id : string})
 
     const reviews = data.pages.flatMap((page) => page.data)
 
+    if (reviews.length === 0)
+    {
+        return <p className="w-[90%] mx-auto text-2xl text-red-500 font-albert">No Reviews for this anime.</p>
+    }
+
     return(
         <div className="mt-9 w-[90%] mx-auto">
             <h2 className="text-center pb-5 text-2xl text-text font-alice">Reviews</h2>

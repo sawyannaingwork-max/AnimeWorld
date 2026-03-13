@@ -4,41 +4,12 @@ import type { CharacterVoiceResponse } from "../type";
 import CharacterVoicesSkeleton from "../loader/CharacterVoicesSkeleton";
 import { useRef } from "react";
 
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/all";
-
-gsap.registerPlugin(ScrollTrigger)
-
-
 export default function Voices({id} : {id : string})
 {
     const navigate = useNavigate()
     const voiceRef = useRef<HTMLDivElement | null>(null)
     // Fetching Data
     const { data, isFetching, isError } = useJikan<CharacterVoiceResponse>(["Voices Actors Character", id], `https://api.jikan.moe/v4/characters/${id}/voices`)
-
-    useGSAP(() => {
-        if (!voiceRef.current)
-        {
-            return 
-        }
-
-        const elements : HTMLDivElement[] = gsap.utils.toArray(voiceRef.current.children)
-
-        elements.forEach(element => {
-            gsap.from(element, {
-                y : 30,
-                opacity : 0,
-                ease : "sine",
-                duration : 0.4,
-                scrollTrigger : {
-                    trigger : element,
-                    start : "top 80%"
-                }
-            })
-        })
-    }, { scope : voiceRef, dependencies : [isFetching]})
 
     if (isFetching)
     {
