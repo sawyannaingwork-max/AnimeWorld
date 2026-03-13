@@ -3,6 +3,7 @@ A website where user can explore information about anime.
 
 ## The Reason behind building this project
 I just love anime and wana know what should I watch next depend on my interest.
+[Live Preview Here] - (https://anime-world-woad.vercel.app/)
 
 ## Tech Stack
 1. HTML
@@ -41,3 +42,26 @@ For Example
 10. recommand animes
 11. staffs
 12. reviews
+13. episodes
+
+### Character Detail Page
+Clicking look detail button on the character will take user to the character detail page.
+This page show character related info.
+For example
+1. basic info
+2. images
+3. anime appearance
+4. manga appearance
+5. voice actors
+
+### Person Detail Page
+Clicking the image of staff will take user to the person detail page.
+This page show the available information of specific person.
+For example
+1. basic info (height, socail and so on)
+2. images
+3. anime appearance
+4. voice acting char and anime
+
+### Anime Page
+This page show all the anime based on user filter.
