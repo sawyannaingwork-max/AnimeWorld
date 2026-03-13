@@ -21,7 +21,7 @@ export default function AnimeCard(props : AnimeType)
             {
                 isPlaying && props.trailer.embed_url && 
                 <iframe 
-                    className="w-62.5 h-88.25"
+                    className="w-full"
                     src={props.trailer.embed_url}
                     allow = "autoplay"
                 >
