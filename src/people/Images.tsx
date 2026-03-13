@@ -48,6 +48,12 @@ export default function Images({id} : {id : string})
 
     const images = data.data 
 
+
+    if (images.length === 0)
+    {
+        return
+    }
+
     return(
         <div className="mt-9" ref={imageRef}>
             <SwiperProvider>

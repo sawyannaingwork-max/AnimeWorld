@@ -5,7 +5,7 @@ import Popular from "./Popular";
 import Result from "./Result";
 import Upcoming from "./Upcoming";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {useQuery } from "@tanstack/react-query";
 
 import gsap from "gsap";
@@ -68,6 +68,13 @@ export default function Home()
         })
     }, {scope : heroRef, dependencies : []})
 
+    // SCroll bar at the top
+    useEffect(() => {
+        window.scrollTo({
+            top : 0,
+            behavior : "smooth"
+        })
+    }, [])
     return(
         <>
             <div ref={heroRef} className="text-background  font-albert bg-linear-to-tr from-secondary to-primary h-screen flex flex-col text-center justify-center gap-10">

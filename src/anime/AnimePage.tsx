@@ -1,5 +1,5 @@
 import type { InputType } from "./../type"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Form from "./Form"
 import Result from "./Result"
 
@@ -16,6 +16,14 @@ export default function AnimePage()
     // Defining state for page
     const [page, setPage] = useState<number>(1)
 
+
+    // Making the scroll bar is at the top
+    useEffect(() => {
+        window.scrollTo({
+            top : 0,
+            behavior : "smooth"
+        })
+    }, [])
     return (
         <div>
             <Form 

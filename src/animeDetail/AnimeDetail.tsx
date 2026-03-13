@@ -6,7 +6,7 @@ import Episodes from "./Episodes"
 import Recommand from "./Recommand"
 import Staff from "./Staff"
 import Reviews from "./Reviews"
-import { Activity, useState } from "react"
+import { Activity, useEffect, useState } from "react"
 
 export default function AnimeDetail()
 {
@@ -15,6 +15,14 @@ export default function AnimeDetail()
     // Getting the id parameter
     const { id } = useParams()
 
+    // Making sure the scroll bar is at the top
+    useEffect(() => {
+        window.scrollTo({
+            top : 0,
+            behavior : "smooth"
+        })
+    }, [])
+    
     if (!id)
     {
         return <p>Invalid Id or the detail about this anime is unavailable.</p>
