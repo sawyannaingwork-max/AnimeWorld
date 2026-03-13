@@ -55,6 +55,29 @@ export default function Recommand({id} : {id : string})
         return 
     }
 
+    if (animes.length < 5)
+    {
+        return(
+            <div className="mt-9 w-[90%] mx-auto">
+                <h2 className="text-center font-alice text-2xl mb-5">Recommands</h2>
+                <div className="flex gap-10 flex-wrap justify-center">
+                    {
+                        animes.map((anime, index) => {
+                            return(
+                                    <Anime 
+                                        key = {index}
+                                        id = {anime.entry.mal_id}
+                                        title = {anime.entry.title ? anime.entry.title : null}
+                                        image={anime.entry.images?.jpg?.image_url}
+                                    />
+                            )
+                        })
+                    }
+                </div>
+            </div>
+        )
+    }
+
     return(
         <div className="mt-9" ref={recommandRef}>
             <h2 className="text-center pb-5 font-alice text-2xl text-text">Recommands</h2>
